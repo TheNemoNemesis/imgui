@@ -1,3 +1,6 @@
+DISCLAIMER: This is not my work: I copied this solution from [thedmd](https://github.com/thedmd/imgui/tree/layouts) to keep it updated with the latest imgui commits
+=====
+
 Dear ImGui
 =====
 
