@@ -12371,27 +12371,8 @@ ImGuiLayout* ImGui::GetCurrentLayout() {
 }
 void ImGui::SetCurrentLayout(ImGuiLayout* layout) {
     ImGuiWindow* window = GetCurrentWindow();
-
-    if (layout)
-    {
-        layout->Parent = window->DC.CurrentLayout;
-        if (layout->Parent != NULL)
-            layout->ParentItemIndex = layout->Parent->CurrentItemIndex;
-        if (window->DC.CurrentLayout)
-        {
-            layout->NextSibling = window->DC.CurrentLayout->FirstChild;
-            layout->FirstChild  = NULL;
-            window->DC.CurrentLayout->FirstChild = layout;
-        }
-        else
-        {
-            layout->NextSibling = NULL;
-            layout->FirstChild  = NULL;
-        }
-    }
-
+    IM_ASSERT(layout);
     window->DC.CurrentLayout = layout;
-    window->DC.CurrentLayoutItem = NULL;
 }
 
 
